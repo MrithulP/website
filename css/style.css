@@ -889,6 +889,31 @@ a.fc-white{
          -o-animation: fade 1s ease-out;
             animation: fade 1s ease-out;
 }
+.gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+.event-section {
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+.event-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+.event-images {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+.event-images img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
 
 
 /* Tablet View */
