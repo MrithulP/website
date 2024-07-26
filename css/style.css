@@ -917,23 +917,164 @@ main {
     padding: 20px;
 }
 
-#gallery-section {
-    background: #f9f9f9;
-    padding: 20px;
-    border-radius: 5px;
+input{
+    display: none;
 }
-
-.event-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.event-gallery img {
+.container{
     width: 100%;
-    max-width: 200px;
-    border-radius: 5px;
+    text-align: center;
 }
+h1{
+    font-weight: normal;
+    font-size: 35px;
+    position: relative;
+    margin: 40px 0;
+}
+h1::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: #DF4322;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+
+
+}
+@keyframes animate{
+    0%{
+        width: 75px;
+    }
+    50%{
+        width: 175px;
+    }
+    100%{
+        width: 75px;
+    }
+}
+.top-content{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    width: 1000%;
+    margin: 0 auto 20px auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+
+}
+label{
+    display: inline-block;
+    height: 100%;
+    margin: 0 90px;
+    line-height: 60px;
+    font-size: 18px;
+    color: #ffffff;
+    cursor: pointer;
+}
+label{
+
+  text-underline-offset: 0.2em;
+  transition: text-decoration-color 300ms, text-underline-offset 300ms;
+}
+
+label:hover{
+    text-decoration: underline 0.15em rgb(155, 28, 28);
+    text-decoration-color: rgb(160, 32, 32);
+    text-underline-offset: 0.4em;
+}
+.Photo-Gallery{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+
+}
+.Sports-Day{
+    position: relative;
+    height: 230px;
+    box-shadow: #DF4322;
+    cursor: pointer;
+    
+}
+.Sports-Day img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.Cross-Country{
+    position: relative;
+    height: 230px;
+    
+}
+.Cross-Country img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.Pink-Day{
+    position: relative;
+    height: 230px;
+    
+}
+.Pink-Day img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+
+#check1:checked ~ .container .Photo-Gallery .Sports-Day .Cross-Country .Pink-Day{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: .5s;
+}
+
+#check2:checked ~ .container .Photo-Gallery .Sports-Day{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+#check2:checked ~ .container .Photo-Gallery .Cross-Country,
+#check2:checked ~ .container .Photo-Gallery .Pink-Day{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0s;
+}
+
+#check3:checked ~ .container .Photo-Gallery .Cross-Country{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+#check3:checked ~ .container .Photo-Gallery .Sports-Day,
+#check3:checked ~ .container .Photo-Gallery .Pink-Day{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0s;
+}
+
+#check4:checked ~ .container .Photo-Gallery .Pink-Day{
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+#check4:checked ~ .container .Photo-Gallery .Cross-Country,
+#check4:checked ~ .container .Photo-Gallery .Sports-Day{
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0s;
+}
+
 
 /* Tablet View */
 @media only screen and (max-width: 992px) {
